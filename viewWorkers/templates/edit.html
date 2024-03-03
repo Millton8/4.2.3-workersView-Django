@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/edit.css" %}" />
+    <title>Редактирование</title>
+</head>
+<body>
+    <h3>Изменение данных сотрудника</h3>
+    <div class="block">
+        
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Уникальный номер</label><br>
+            <input type="number" name="uniq" value="{{data.uniq}}" disabled="disabled"/>
+        </p>
+        <p>
+            <label>Имя</label><br>
+            <input type="text" name="name" value="{{data.name}}" />
+        </p>
+        <p>
+            <label>Зарплата в час</label><br>
+            <input type="number" name="price" value="{{data.price}}" />
+        </p>
+        <input type="submit" value="Сохранить" class="btn">
+    </form>
+</div>
+    
+</body>
+</html>

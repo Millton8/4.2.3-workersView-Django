@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load poll_extras %}
+    <table>
+        <thead><th>Номер</th><th>Имя</th><th>Объект</th><th>Начал</th><th>Закончил</th><th>Отработал</th><th>ЗП</th><th>Заработал</th></thead>
+        {% for rez in data %}
+        <tr>
+            <td>{{ rez.uniq }}</td>
+            <td>{{ rez.name }}</td>
+            <td>{{ rez.project }}</td>
+            <td><p style="margin-top: 0px;margin-bottom: 0px;">{{ rez.tbegin|date:"d.m.Y" }}</p><p style="margin-top: 0px;margin-bottom: 0px;">{{ rez.tbegin|date:"H:i" }}</p></td>
+            <td><p style="margin-top: 0px;margin-bottom: 0px;">{{ rez.tend|date:"d.m.Y" }}</p><p style="margin-top: 0px;margin-bottom: 0px;">{{ rez.tend|date:"H:i" }}</p></td>
+            <td>{{ rez.timeofwork|floatformat:"-2" }}</td>
+            <td>{{ rez.price }}</td>
+            <td>{{ rez.salary}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

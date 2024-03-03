@@ -1,0 +1,12 @@
+{% load static %}
+<style>
+
+</style>
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" > 
+
+<nav class="justify-content-center nav nav-pills flex-column flex-sm-row mb-4 me-2 ms-2">
+  <a class="text-sm-center nav-link {% if request.path == '/' %} active {% else %}  {% endif %}" aria-current="page" href="/">Статус</a>
+  <a class="text-sm-center nav-link {% if request.path == '/generalreport/' %} active {% else %}  {% endif %}" href="/generalreport/">Отчет</a>
+  <a class="text-sm-center nav-link {% if request.path == '/workerlist/' %} active {% else %}  {% endif %}" href="/workerlist/">Список</a>
+</nav>
