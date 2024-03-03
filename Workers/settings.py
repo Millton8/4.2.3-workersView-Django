@@ -72,15 +72,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Workers.wsgi.application'
 
 
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wo',
-        'USER': 'pos',
-        'PASSWORD': 'ma',
-        'HOST': 'localh',
-        'PORT': '54',
+        'NAME': 'workers',
+        'USER': 'postgres',
+        'PASSWORD': 'manikop',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
